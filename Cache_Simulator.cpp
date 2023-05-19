@@ -43,7 +43,7 @@ void Cache_Simulation(const string &filename, unsigned int S, unsigned int L, un
       cache[index].tag = tag;
     }
     // Output the valid bits and tags of all cache entries
-    cout << "Valid bits and tags: ";
+    cout << "Valid bits and tags: " << endl;
     int i = 0;
     for (const auto &line : cache) {
       cout << i << " " << line.valid << ":" << line.tag << endl;
