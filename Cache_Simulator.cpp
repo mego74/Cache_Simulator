@@ -9,7 +9,7 @@ struct CacheLine{
   unsigned int tag; // Tag to identify the memory block stored in the cache line
 };
 
-void simulateCache(const string &filename, unsigned int S, unsigned int L, unsigned int Time){
+void Cache_Simulation(const string &filename, unsigned int S, unsigned int L, unsigned int Time){
   unsigned int cache_lines = S / L;
   vector<CacheLine> cache(cache_lines); // Vector representing the cache
 
@@ -76,7 +76,7 @@ int main() {
       cin >> Time;
   }
   
-  simulateCache(filename, S, L, Time);
+  Cache_Simulation(filename, S, L, Time);
 
   return 0;
 }
