@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Execution</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1> Program Execution </h1>
+
+    <!-- <table style="float: center; width: 45%;">
+        <tr>
+            <th>clock</th>
+            <th>hit/miss</th>
+            <th>Value</th>>
+        </tr>
+        {% for line in results %}
+        <tr>
+            <td>{{ line.split(' ')[0] }}</td>
+            <td>{{ line.split(' ')[1].split(':')[0] }}</td>
+            <td>{{ line.split(' ')[1].split(':')[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table> -->
+    <table style="float: right; width: 45%;">
+        <tr>
+            <th>Total number of accesses</th>
+            <th>Hit Ratio</th>
+            <th>Miss Ratio</th>
+            <th>AMAT</th>
+
+        </tr>
+    {% for line in zipped_summary %}
+    <tr>
+        <td>{{ line.split(' ')[0] }}</td>
+        <td>{{ line.split(' ')[1] }}</td>
+        <td>{{ line.split(' ')[2] }}</td>
+        <td>{{ line.split(' ')[3] }}</td>
+
+
+    </tr>
+{% endfor %}
+
+    </table>
+
+    <table style="float: left; width: 45%;">
+        <tr>
+            <th>Valid Bits</th>
+            <th>Tags</th>
+        </tr>
+        {% for line in bits %}
+        <tr>
+            <td>{{ line.split(' ')[0] }}</td>
+            <td>{{ line.split(' ')[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
