@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cache Simulator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Welcome to the Cache simulator</h1>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('submit') }}">
+            <label for="cacheSize">Please, enter the cache size:</label>
+            <input type="number" name="cacheSize" id="cacheSize" required min="0" max="4294967295"><br>
+
+            <label for="lineSize">Please, enter the line size:</label>
+            <input type="number" name="lineSize" id="lineSize" required min="0" max="4294967295"><br>
+
+            <label for="clockCycles">Please, enter the clock cycles:</label>
+            <input type="number" name="clockCycles" id="clockCycles" required min="1" max="10"><br>
+
+            
+            <label for="addressing">Please, enter the memory addressing file:</label>
+            <textarea id="addressing" name="addressing" oninput="autoResize()" required></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit" class="center">
+        </form>
+    <script>
+        function autoResize() {
+                var textarea_1 = document.getElementById("addressing");
+                // Reset the height to its minimum value to force it to shrink
+                textarea_1.style.height = "auto";
+                // Set the new height based on the scroll height and border size
+                textarea_1.style.height = (textarea_1.scrollHeight + 2) + "px";
+
+            }
+    </script>
+
+    </body>
+    </html>
