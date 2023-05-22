@@ -1,0 +1,2 @@
+Ahmed Jaheen & Adham Samy wrote the cache code with all data structures.
+Kyrllos Zakarya wrote the Bonus part with editing the cache code to adjust on flask and python.
